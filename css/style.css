@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Questrial', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff176;
+    height: 10vh;
+    width: 100vw;
+}
+
+header img{
+    width: 200px;
+    height: 60px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+#section-food {
+    margin-bottom: 10px;
+    width: 400px;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#section-food button{
+    width: 170px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#section-food button:hover{
+    background-color: rgba(0,128,128,0.3);
+}
+
+#section-food button img{
+    width: 70%;
+    height: 70%;
+}
+
+#section-result {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 30vh;
+}
+
+#section-result h2{ 
+    font-size: 35px;
+}
+
+#numberCalories{
+    color: #f44336;
+}
+
+.darkMode {
+    background-color: #263238;
+    color: white;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    visibility: hidden;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #00bcd4;
+}
+
+.switch input:focus + .slider {
+    box-shadow: 0 0 1px #00bcd4;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.no-active {
+    border: 1px solid rgba(0,128,128,0.6);
+    background-color:transparent;
+}
+
+.active {
+    border: 1px solid rgba(255,0,0,0.6);
+    background-color: rgba(255,0,0,0.3);
+}
