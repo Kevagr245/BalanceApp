@@ -1,5 +1,5 @@
 /**
- * Constante de los alimentos
+ * Objetos de los alimentos
  */
 const food = [
     {
@@ -28,8 +28,8 @@ const food = [
  * Constante que contiene los elementos HTML
  */
 const body = document.querySelector("body")
-const cbxModo = document.getElementById('cbxModo');
-const lblCalories = document.getElementById('numberCalories');
+const cbxModo = document.getElementById('cbx-modo');
+const lblCalories = document.getElementById('number-calories');
 const sectionFood = document.getElementById('section-food');
 
 /**
@@ -37,9 +37,11 @@ const sectionFood = document.getElementById('section-food');
  */
 let calories = 0;
 
-
 showFood();
 
+/**
+ * Método para msotrar las comidas
+ */
 function showFood () {
     let container = ""
     food.forEach((row) => {
@@ -52,7 +54,7 @@ function showFood () {
 }
 
 /**
- * Se recorre cada botón para asignale el evento click
+ * Método para cargar el evento
  */
 function loadEvent(){
     let btns = document.querySelectorAll("section button");
