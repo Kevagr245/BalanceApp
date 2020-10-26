@@ -1,24 +1,67 @@
 /**
+ * Constante de los alimentos
+ */
+const food = [
+    {
+        name: "Hamburguesa",
+        img: "foods/hamburguesa.png",
+        calories: 300,
+    },
+    {
+        name: "Soda",
+        img: "foods/soda.png",
+        calories: 200    
+    },
+    {
+        name: "Sorbete",
+        img: "foods/sorbete.png",
+        calories: 170,
+    },
+    {
+        name: "Pizza",
+        img: "foods/Pizza.png",
+        calories: 330,
+    },
+]
+
+/**
  * Constante que contiene los elementos HTML
  */
 const body = document.querySelector("body")
 const cbxModo = document.getElementById('cbxModo');
 const lblCalories = document.getElementById('numberCalories');
-const btns = document.querySelectorAll("section button")
+const sectionFood = document.getElementById('section-food');
 
 /**
  * Contador de las calorías
  */
 let calories = 0;
 
+
+showFood();
+
+function showFood () {
+    let container = ""
+    food.forEach((row) => {
+        container += `
+        <button class="no-active" value="${row.calories}"><img src="img/${row.img}" alt="${row.name}"></button>
+        `
+    })
+    sectionFood.innerHTML = container;
+    loadEvent();
+}
+
 /**
  * Se recorre cada botón para asignale el evento click
  */
-Array.from(btns).forEach( btn =>{
-    btn.addEventListener("click",()=>{
-        countCalories(btn);
+function loadEvent(){
+    let btns = document.querySelectorAll("section button");
+    Array.from(btns).forEach( btn =>{
+        btn.addEventListener("click",()=>{
+            countCalories(btn);
+        })
     })
-})
+}
 
 /**
  * Evento del checkbox para activar/desactivar el modo oscuro
